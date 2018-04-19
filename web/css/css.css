@@ -3,6 +3,7 @@ body{
     line-height: 1.8;
     color: #f5f6f7;
 }
+
 p{
     font-size: 16px;
 }
@@ -10,6 +11,7 @@ p{
 .margin{
     margin-bottom: 45px;
 }
+
 .cor-1{ 
     background-color: #1abc9c; /* Green */
     color: #ffffff;
@@ -18,7 +20,7 @@ p{
 .cor-2{ 
     background-color: #ffffff; /* White */
     color: #555555;
-  }
+}
 
 .cor-3{ 
     background-color: #2f2f2f; /* Black Gray */
@@ -50,4 +52,12 @@ p{
   
 .navbar-nav  li a:hover{
     color: #1abc9c !important;
+}
+
+.imagem{
+    width: 180px;
+    height: 180px;
+    border-style: solid;
+    border-image-width: #000000;
+    padding: 8px;
 }

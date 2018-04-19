@@ -1,0 +1,12 @@
+<%@ page pageEncoding="UTF-8" %>
+<!-- INICIO FOOTER -->
+<footer class="rodape cor-3 text-center">
+    <p>Visite também o repositório do projeto: <a href="https://github.com/RafaelHB52/projeto04-POO">GitHub</a></p>
+    <p>Desenvolvido em Abril de 2018</p>
+</footer>
+<!-- FIM FOOTER -->
+
+<!-- SCRIPTS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
