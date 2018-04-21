@@ -18,6 +18,22 @@
         int i = Integer.parseInt(request.getParameter("i"));
         Bd.getCliente().remove(i);
         response.sendRedirect(request.getRequestURI());
+    } else if(request.getParameter("edit") != null){
+        int i = Integer.parseInt(request.getParameter("i"));
+        Bd.getCliente().remove(i);
+      
+      
+        Cliente altCliente = new Cliente();
+        altCliente.setNome(request.getParameter("nome"));
+        altCliente.setCpf(request.getParameter("cpf"));
+        altCliente.setRg(request.getParameter("rg"));
+        altCliente.setEmail(request.getParameter("email"));
+        altCliente.setTelefone(request.getParameter("telefone"));
+        altCliente.setEndereco(request.getParameter("endereco"));
+        Bd.getCliente().add(i, altCliente);
+
+        response.sendRedirect(request.getRequestURI());
+        
     }
 %>
     <head>
@@ -37,7 +53,7 @@
                     E-Mail:<br/><input type="text" name="email" style="color: black"/><br/>
                     Telefone:<br/><input type="text" name="telefone" style="color: black"/><br/>
                     Endereço:<br/><input type="text" name="endereco" style="color: black"/><br/>
-                    <br/><input type="submit" name="add" value="Cadastrar" style="color: black"/><br/>
+                    <br/><input type="submit" name="add" value="Cadastrar" style="color: black" class="btn btn-default btn-lg"/><br/>
                 </form><hr/>
         </div>
         
@@ -67,12 +83,13 @@
                 <td>
                     <form>
                         <input type="hidden" name="i" value="<%=i%>" />
-                        <center><input type="submit" name="del" value="Excluir" /></center>
-                    </form>
+                        <center><input type="submit" name="del" value="Excluir" class="btn btn-default btn-lg"/></center>
+                    </form>    
                 </td>
             </tr>
             <%}%>
             </table></center>
+            <br/><center><a href="altcliente.jsp" role="button" class="btn btn-default btn-lg">Alterar</a></center>
         </div>
         
     <%@include file="WEB-INF/jspf/rodape.jspf"%>
