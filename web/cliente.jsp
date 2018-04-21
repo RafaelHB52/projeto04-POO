@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
  <%
+    /* Adicionar */
     if(request.getParameter("add") != null){
         Cliente c = new Cliente();
         c.setNome(request.getParameter("nome"));
@@ -14,26 +15,12 @@
         c.setEndereco(request.getParameter("endereco"));
         Bd.getCliente().add(c);
         response.sendRedirect(request.getRequestURI());
-    } else if(request.getParameter("del") != null){
+    }
+    /* Remover */
+    else if(request.getParameter("del") != null){
         int i = Integer.parseInt(request.getParameter("i"));
         Bd.getCliente().remove(i);
         response.sendRedirect(request.getRequestURI());
-    } else if(request.getParameter("edit") != null){
-        int i = Integer.parseInt(request.getParameter("i"));
-        Bd.getCliente().remove(i);
-      
-      
-        Cliente altCliente = new Cliente();
-        altCliente.setNome(request.getParameter("nome"));
-        altCliente.setCpf(request.getParameter("cpf"));
-        altCliente.setRg(request.getParameter("rg"));
-        altCliente.setEmail(request.getParameter("email"));
-        altCliente.setTelefone(request.getParameter("telefone"));
-        altCliente.setEndereco(request.getParameter("endereco"));
-        Bd.getCliente().add(i, altCliente);
-
-        response.sendRedirect(request.getRequestURI());
-        
     }
 %>
     <head>
@@ -44,6 +31,7 @@
     <body>
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
         
+        <!-- Início da Entrada de Dados -->
         <div class="container-fluid cor-1 text-center">
                 <h3 class="margin">Cadastrar Cliente</h3><hr/>
                 <form>
@@ -56,7 +44,9 @@
                     <br/><input type="submit" name="add" value="Cadastrar" style="color: black" class="btn btn-default btn-lg"/><br/>
                 </form><hr/>
         </div>
+        <!-- Fim da Entrada de Dados -->
         
+        <!-- Início Listagem -->
         <div class="container-fluid cor-2 text-center">
             <h3 class="margin" style="font-weight: bold">Lista de Cadastros</h3>
             <center><table class="table-condensed table-hover table-responsive" border="1">
@@ -91,6 +81,7 @@
             </table></center>
             <br/><center><a href="altcliente.jsp" role="button" class="btn btn-default btn-lg">Alterar</a></center>
         </div>
+        <!-- Fim Listagem -->
         
     <%@include file="WEB-INF/jspf/rodape.jspf"%>
     </body>

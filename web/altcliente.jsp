@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html>
  <%
+    /* Alterar */
     if(request.getParameter("edit") != null){
         int indice = Integer.parseInt(request.getParameter("indice"));
         Bd.getCliente().remove(indice);
-      
       
         Cliente altCliente = new Cliente();
         altCliente.setNome(request.getParameter("nome_edit"));
@@ -18,8 +18,7 @@
         altCliente.setEndereco(request.getParameter("endereco_edit"));
         Bd.getCliente().add(indice, altCliente);
 
-        response.sendRedirect(request.getRequestURI());
-        
+        response.sendRedirect(request.getRequestURI()); 
     }
 %>
     <head>
@@ -30,18 +29,22 @@
     <body>
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
         
-        <div class="container-fluid cor-1 text-center">
-                <h3 class="margin">Alterar Cliente</h3><hr/>
-                <form>
-                    Índice:<br/><input type="text" name="indice" style="color: black"/><br/>
-                    Nome:<br/><input type="text" name="nome_edit" style="color: black"/><br/>
-                    CPF:<br/><input type="text" name="cpf_edit" style="color: black"/><br/>
-                    RG:<br/><input type="text" name="rg_edit" style="color: black"/><br/>
-                    E-Mail:<br/><input type="text" name="email_edit" style="color: black"/><br/>
-                    Telefone:<br/><input type="text" name="telefone_edit" style="color: black"/><br/>
-                    Endereço:<br/><input type="text" name="endereco_edit" style="color: black"/><br/>
-                    <br/><input type="submit" name="edit" value="Alterar" style="color: black" class="btn btn-default btn-lg"/><br/>
-                </form><hr/>
+        <div class="container-fluid cor-1">
+            <a href="cliente.jsp" role="button" class="btn btn-default btn-lg">Voltar</a>
+            
+            <!-- Início da Entrada de Dados -->
+            <center><h3 class="margin">Alterar Cliente</h3><hr/>
+            <form>
+                Índice:<br/><input type="text" name="indice" style="color: black"/><br/>
+                Nome:<br/><input type="text" name="nome_edit" style="color: black"/><br/>
+                CPF:<br/><input type="text" name="cpf_edit" style="color: black"/><br/>
+                RG:<br/><input type="text" name="rg_edit" style="color: black"/><br/>
+                E-Mail:<br/><input type="text" name="email_edit" style="color: black"/><br/>
+                Telefone:<br/><input type="text" name="telefone_edit" style="color: black"/><br/>
+                Endereço:<br/><input type="text" name="endereco_edit" style="color: black"/><br/>
+                <br/><input type="submit" name="edit" value="Alterar" style="color: black" class="btn btn-default btn-lg"/><br/>
+            </form><hr/></center>
+            <!-- Fim da Entrada de Dados -->
         </div>
 
     <%@include file="WEB-INF/jspf/rodape.jspf"%>

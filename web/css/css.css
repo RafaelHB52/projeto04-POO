@@ -13,17 +13,17 @@ p{
 }
 
 .cor-1{ 
-    background-color: #1abc9c; /* Green */
+    background-color: #1abc9c; /* Verde */
     color: #ffffff;
 }
 
 .cor-2{ 
-    background-color: #ffffff; /* White */
+    background-color: #ffffff; /* Branco */
     color: #555555;
 }
 
 .cor-3{ 
-    background-color: #2f2f2f; /* Black Gray */
+    background-color: #2f2f2f; /* Cinza escuro */
     color: #fff;
 }
 
@@ -57,7 +57,5 @@ p{
 .imagem{
     width: 180px;
     height: 180px;
-    border-style: solid;
-    border-image-width: #000000;
     padding: 8px;
 }
