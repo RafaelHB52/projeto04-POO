@@ -5,22 +5,25 @@
 <html>
  <%
     /* Alterar */
-    if(request.getParameter("edit") != null){
-        int indice = Integer.parseInt(request.getParameter("indice"));
-        Bd.getCliente().remove(indice);
-      
-        Cliente altCliente = new Cliente();
-        altCliente.setNome(request.getParameter("nome_edit"));
-        altCliente.setCpf(request.getParameter("cpf_edit"));
-        altCliente.setRg(request.getParameter("rg_edit"));
-        altCliente.setEmail(request.getParameter("email_edit"));
-        altCliente.setTelefone(request.getParameter("telefone_edit"));
-        altCliente.setEndereco(request.getParameter("endereco_edit"));
-        Bd.getCliente().add(indice, altCliente);
+    try{
+        if(request.getParameter("edit") != null){
+            int indice = Integer.parseInt(request.getParameter("indice"));
+            Bd.getCliente().remove(indice);
 
-        response.sendRedirect(request.getRequestURI()); 
-    }
-%>
+            Cliente altCliente = new Cliente();
+            altCliente.setNome(request.getParameter("nome_edit"));
+            altCliente.setCpf(request.getParameter("cpf_edit"));
+            altCliente.setRg(request.getParameter("rg_edit"));
+            altCliente.setEmail(request.getParameter("email_edit"));
+            altCliente.setTelefone(request.getParameter("telefone_edit"));
+            altCliente.setEndereco(request.getParameter("endereco_edit"));
+            Bd.getCliente().add(indice, altCliente);
+
+            response.sendRedirect(request.getRequestURI()); 
+        }
+    }catch(Exception ex){%>
+        <script>alert("Insira os dados para realizar a alteração")</script>
+    <% } %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Controller</title>

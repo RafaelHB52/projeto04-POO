@@ -13,8 +13,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="home.jsp">HOME</a></li>
-        <li><a href="cliente.jsp">CLIENTE</a></li>
-        <li><a href="fornecedor.jsp">FORNECEDOR</a></li>
+        <li><a href="cliente.jsp">CADASTRO CLIENTE</a></li>
+        <li><a href="fornecedor.jsp">CADASTRO FORNECEDOR</a></li>
       </ul>
     </div>
   </div>

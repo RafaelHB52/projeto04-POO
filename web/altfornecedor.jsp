@@ -11,22 +11,25 @@
 <html>
     <%
     /* Alterar */
-    if(request.getParameter("edit") != null){
-        int indice = Integer.parseInt(request.getParameter("indice"));
-        Bd.getFornecedor().remove(indice);
-      
-        Fornecedor altFornecedor = new Fornecedor();
-        altFornecedor.setNome(request.getParameter("nome_edit"));
-        altFornecedor.setRazao(request.getParameter("razao_edit"));
-        altFornecedor.setCnpj(request.getParameter("cnpj_edit"));
-        altFornecedor.setEmail(request.getParameter("email_edit"));
-        altFornecedor.setTel(request.getParameter("telefone_edit"));
-        altFornecedor.setEnd(request.getParameter("endereco_edit"));
-        Bd.getFornecedor().add(indice, altFornecedor);
+    try{
+        if(request.getParameter("edit") != null){
+            int indice = Integer.parseInt(request.getParameter("indice"));
+            Bd.getFornecedor().remove(indice);
 
-        response.sendRedirect(request.getRequestURI()); 
-    }
-%>
+            Fornecedor altFornecedor = new Fornecedor();
+            altFornecedor.setNome(request.getParameter("nome_edit"));
+            altFornecedor.setRazao(request.getParameter("razao_edit"));
+            altFornecedor.setCnpj(request.getParameter("cnpj_edit"));
+            altFornecedor.setEmail(request.getParameter("email_edit"));
+            altFornecedor.setTel(request.getParameter("telefone_edit"));
+            altFornecedor.setEnd(request.getParameter("endereco_edit"));
+            Bd.getFornecedor().add(indice, altFornecedor);
+
+            response.sendRedirect(request.getRequestURI()); 
+        }
+    }catch(Exception ex){%>
+        <script>alert("Insira os dados para realizar a alteração")</script>
+    <% } %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <title>Controller</title>
