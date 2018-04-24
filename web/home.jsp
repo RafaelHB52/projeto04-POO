@@ -28,7 +28,7 @@
                     <div class="col-sm-4">
                         <p style="font-weight: bold">João Paulo</p>
                         <p>Estudante de Análise e Desenvolvimento de Sistemas na FATEC-PG</p>
-                        <center><img src="imagens/noimage.png" class="img-responsive img-circle margin imagem"></center>
+                        <center><img src="imagens/joao.PNG" class="img-responsive img-circle margin imagem"></center>
                         <center><a href="https://github.com/10joaopaulo" style="color:#1abc9c">GitHub</a></center>
                     </div> 
 
